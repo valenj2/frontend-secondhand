@@ -1,0 +1,15 @@
+.home {
+  padding: 20px; /* Para dejar espacio para el header */
+  width: 80vw;
+  border-radius: 15px; /* Esto aplica bordes redondeados */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.productlist {
+  display: flex;
+  /* grid-template-columns: repeat(4, 1fr); */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

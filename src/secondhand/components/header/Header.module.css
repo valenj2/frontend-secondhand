@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  height: 10vh;
+}
+
+/* Para pantallas grandes */
+.headerleft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 150px;
+  margin-right: 10px;
+}
+
+.slogan {
+  font-size: 1.2rem;
+}
+.cartCount{
+  position: absolute;
+  margin-top: -10px;
+  padding: 0px 3px;
+}
+
+.headerright{
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Link{
+  box-sizing: border-box;
+  margin: 0px 10px;
+}
+
+.btn {
+  margin: 10px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 15px 10px;
+  }
+
+  .headerleft {
+    margin-bottom: 10px;
+  }
+
+  .slogan {
+    font-size: 1rem; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
+  }
+
+  .logo {
+    height: 40px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+  }
+
+  .headerright {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerright .btn {
+    width: 100%; /* Los botones ocupan todo el ancho en pantallas pequeñas */
+    padding: 10px;
+    margin: 5px 0;
+  }
+}
+
+/* Estilos aún más pequeños, por ejemplo, en móviles */
+@media (max-width: 480px) {
+  .slogan {
+    font-size: 0.9rem; /* Más pequeño en móviles */
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .headerright .btn {
+    font-size: 0.9rem; /* Reduce el tamaño del texto en los botones */
+  }
+}

@@ -1,0 +1,24 @@
+.footer {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    bottom: 0;
+    position: relative;
+    height: 15vh;
+  }
+  
+  .footercontent {
+    text-align: center;
+  }
+  
+  .footerlogo {
+    height: 75px;
+    margin-bottom: 10px;
+  }
+  
+  .copy {
+    font-size: 0.9rem;
+  }
+  
