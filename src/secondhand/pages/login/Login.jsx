@@ -1,24 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./Login.module.css";
 import Layout from "../../layout/SecondHandLayout.jsx";
 
-import { login } from "../../../store/auth/actions.js";
+import { login, setAuthenticated, setToken } from "../../../store/auth/actions.js";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsAuthenticated } from "../../../store/auth/selectors.js";
 
 const Login = () => {
-  // Redux
   const dispatch = useDispatch();
-  const isAuth = useSelector(selectIsAuthenticated)
 
 
-  // Define los estados para los campos del formulario
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [signupUserName, setSignupUserName] = useState("");
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPhone, setSignupPhone] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
+
+  const token = useSelector((state) => state.auth.token);
+
+  useEffect(() => {
+    const sessionToken = sessionStorage.getItem('authToken');
+    console.log("session token")
+
+    if (sessionToken && !token) {
+      dispatch(setToken(sessionToken));
+      dispatch(setAuthenticated(true));
+    }
+  }, [dispatch, token]);
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -27,7 +37,6 @@ const Login = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para el registro
     console.log("Sign up user name:", signupUserName);
     console.log("Sign up email:", signupEmail);
     console.log("Sign up phone:", signupPhone);

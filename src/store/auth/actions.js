@@ -1,12 +1,11 @@
-// actions.js
 import { createAction } from '@reduxjs/toolkit';
 import { post } from '../apiInstance';
 
-export const setLoading = createAction('auth/setLoading');
-export const setMessage = createAction('auth/setMessage');
 export const setToken = createAction('auth/setToken');
 export const setAuthenticated = createAction('auth/setAuthenticated');
 export const setUser = createAction('auth/setUser');
+export const setMessage = createAction('auth/setMessage');
+export const setLoading = createAction('auth/setLoading');
 export const logout = createAction('auth/logout');
 
 export const login = (username, password) => async (dispatch) => {
@@ -17,7 +16,7 @@ export const login = (username, password) => async (dispatch) => {
     if (response.status === 200) {
       const { token, userDetails } = response.data;
       const { usuario, nombre, apellido, email, rol } = userDetails;
-      
+      sessionStorage.setItem('authToken', token);
       dispatch(setToken(token));
       dispatch(setAuthenticated(true));
       dispatch(setUser({ usuario, nombre, apellido, email, rol }));
@@ -26,9 +25,13 @@ export const login = (username, password) => async (dispatch) => {
       dispatch(setMessage('Login failed: ' + response.data.message));
     }
   } catch (error) {
-    // Manejar errores de la red o de la solicitud
     dispatch(setMessage('Login failed: ' + error.message));
   } finally {
     dispatch(setLoading(false));
   }
+};
+
+export const performLogout = () => (dispatch) => {
+  sessionStorage.removeItem('authToken'); 
+  dispatch(logout()); 
 };

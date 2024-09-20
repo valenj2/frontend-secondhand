@@ -1,19 +1,18 @@
-import React from 'react';
-import { DashBoard } from '../../layout/DashBoardLayout';
-import style from './TableProducts.module.css';
-
-const users = [
-  { nombre: 'Juan', apellido: 'Pérez', email: 'juan@example.com', rol: 'Admin' },
-  { nombre: 'Ana', apellido: 'Gómez', email: 'ana@example.com', rol: 'User' },
-];
+import { DashBoard } from "../../layout/DashBoardLayout";
+import style from "./TableProducts.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts } from "../../../store/products/selectors";
 
 export const TableProducts = () => {
-  const handleEdit = (user) => {
-    console.log('Edit user:', user);
+  const dispatch = useDispatch();
+  const products = useSelector(selectProducts);
+
+  const handleEdit = (product) => {
+    console.log("Edit product:", product);
   };
 
-  const handleDelete = (user) => {
-    console.log('Delete user:', user);
+  const handleDelete = (product) => {
+    console.log("Delete product:", product);
   };
 
   return (
@@ -22,28 +21,30 @@ export const TableProducts = () => {
         <table className={style.table}>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Email</th>
-              <th>Rol</th>
+              <th>Estado</th>
+              <th>Categoría</th>
+              <th>Descripcion</th>
+              <th>tipotela</th>
+              <th>precio</th>
               <th>Acción</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {products.map((product, index) => (
               <tr key={index}>
-                <td>{user.nombre}</td>
-                <td>{user.apellido}</td>
-                <td>{user.email}</td>
-                <td>{user.rol}</td>
+                <td>{product.estado}</td>
+                <td>{product.categoriaPrenda}</td>
+                <td>{product.descripcion}</td>
+                <td>{product.tipoTela}</td>
+                <td>{product.precio}</td>
                 <td className={style.actions}>
                   <i
                     className={`fas fa-edit ${style.Icon}`}
-                    onClick={() => handleEdit(user)}
+                    onClick={() => handleEdit(product)}
                   ></i>
                   <i
                     className={`fas fa-trash-alt ${style.Icon}`}
-                    onClick={() => handleDelete(user)}
+                    onClick={() => handleDelete(product)}
                   ></i>
                 </td>
               </tr>

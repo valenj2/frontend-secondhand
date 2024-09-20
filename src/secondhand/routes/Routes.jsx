@@ -17,7 +17,7 @@ const AppRoutes = () => {
         <Route path="/cart" element={<Carrito/>}/>
         <Route path="/checkout" element={<PrivateRoute element={<CheckOut />} />} />
         <Route path="/dashboard" element={<PrivateRoute element={<TablaUsers />} />} />
-        <Route path="/users" element={<PrivateRoute element={<TableProducts />} />} />
+        <Route path="/products" element={<PrivateRoute element={<TableProducts />} />} />
         
       </Routes>
     </Router>

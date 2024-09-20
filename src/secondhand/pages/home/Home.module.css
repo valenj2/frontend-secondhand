@@ -1,8 +1,8 @@
 .home {
   padding: 20px; /* Para dejar espacio para el header */
-  width: 80vw;
+  width: 100%;
   border-radius: 15px; /* Esto aplica bordes redondeados */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .productlist {

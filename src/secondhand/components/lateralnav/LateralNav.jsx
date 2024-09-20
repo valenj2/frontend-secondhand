@@ -13,10 +13,10 @@ export const LateralNav = () => {
   const handleOptionClick = (text) => {
     switch (text) {
       case "Productos":
-        navigate('/dashboard')
+        navigate('/products')
         break;
       case "Usuarios":
-        navigate('/users')
+        navigate('/dashboard')
         break;
       case "salir":
         navigate('/')
@@ -41,9 +41,9 @@ export const LateralNav = () => {
       </div>
       <div className={styles.menu}>
         {[
-          { icon: "bx-grid-alt", text: "Productos" },
           { icon: "bx-user", text: "Usuarios" },
-          { icon: "bx-cog", text: "salir" },
+          { icon: "bx-grid-alt", text: "Productos" },
+          { icon: "bx-log-out", text: "salir" },
         ].map((item, index) => (
           <div
             key={index}

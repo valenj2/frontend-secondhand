@@ -1,4 +1,3 @@
-// reducer.js
 import { createReducer } from '@reduxjs/toolkit';
 import { setUser, clearUser } from './actions';
 

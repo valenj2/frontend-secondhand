@@ -17,7 +17,6 @@ const Carrusel = ({ prendas, visibleItems = 3 }) => {
     );
   };
 
-  // Slice the prendas array to get the visible items
   const visiblePrendas = prendas.slice(currentIndex, currentIndex + visibleItems);
 
   return (

@@ -1,21 +1,23 @@
-import React from 'react';
 import { DashBoard } from '../../layout/DashBoardLayout';
 import style from './TablaUsers.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAllUsers } from '../../../store/users/selectors';
+import { useEffect } from 'react';
+import { fetchUsers } from '../../../store/users/actions';
 
-const users = [
-  { nombre: 'Juan', apellido: 'Pérez', email: 'juan@example.com', rol: 'Admin' },
-  { nombre: 'Ana', apellido: 'Gómez', email: 'ana@example.com', rol: 'User' },
-  // Agrega más usuarios según sea necesario
-];
 
 export const TablaUsers = () => {
+  const dispatch = useDispatch()
+  const users = useSelector(selectAllUsers)
   const handleEdit = (user) => {
-    // Maneja la edición del usuario
     console.log('Edit user:', user);
   };
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [dispatch])
+  
 
   const handleDelete = (user) => {
-    // Maneja la eliminación o deshabilitación del usuario
     console.log('Delete user:', user);
   };
 

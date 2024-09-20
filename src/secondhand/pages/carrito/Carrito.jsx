@@ -1,9 +1,7 @@
 import styles from "./Carrito.module.css";
 import SecondHandLayout from "../../layout/SecondHandLayout";
-//redux
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-//
 import {
   selectTotalItems,
   selectTotalPrice,
@@ -55,8 +53,8 @@ const Carrito = () => {
                       className={`${styles.img} ${styles.imgFluid}`}
                       src={
                         product.url || "https://i.imgur.com/1GrakTl.jpg"
-                      } // Asumiendo que `product` tiene una propiedad `imageUrl`
-                      alt={product.name || "Product Image"} // Asumiendo que `product` tiene una propiedad `name`
+                      } 
+                      alt={product.name || "Product Image"} 
                     />
                   </div>
                   <div className={`${styles.col} text-color-basic`}>

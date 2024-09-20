@@ -1,7 +1,6 @@
 import { Products } from './reducer';
 import { get } from '../apiInstance';
 
-// Actions
 export const { setProducts, setProductsByCategory,setLoading,setActivateFailure} = Products.actions;
 
 export const obtenerPrendas = () => async (dispatch) => {

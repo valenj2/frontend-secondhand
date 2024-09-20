@@ -1,4 +1,3 @@
-// selectors.js
 export const selectUser = (state) => state.user;
 
 export const selectTipoDeUsuario = (state) => state.user.tipoDeUsuario;

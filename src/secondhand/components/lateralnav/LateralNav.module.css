@@ -69,8 +69,7 @@
 
 /* ENLACES MENU */
 .enlace:hover{
-    opacity: 1.5;
-    border: white solid;
+    border: white 0.5px solid;
 }
 .menu .enlace {
     width: 100%;

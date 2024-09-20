@@ -1,4 +1,3 @@
-// states.js
 export const initialState = {
     loading: false,
     message: '',

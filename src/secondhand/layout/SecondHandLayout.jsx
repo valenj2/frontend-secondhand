@@ -1,6 +1,7 @@
 import Header from "@components/header/Header";
 import Footer from "@components/footer/Footer";
 import styles from './layout.module.css';
+import IconWhatsapp from "../components/icons/whatsapp/IconWhatsapp";
 
 const Layout = ({ children }) => {
   return (
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <Footer className={styles.footer} />
+      <IconWhatsapp/>
     </div>
   );
 };

@@ -1,18 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import style from "./Header.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectTotalItems } from "../../../store/carrito/selectors";
 import { selectIsAuthenticated } from "../../../store/auth/selectors";
 import { selectRol } from "../../../store/auth/selectors";
+import { performLogout } from "../../../store/auth/actions";
 function Header() {
   const navigate = useNavigate();
-  // Usa el selector para obtener la cantidad total de productos en el carrito
   const totalItems = useSelector(selectTotalItems);
+  const dispatch = useDispatch();
 
   const isAuth = useSelector(selectIsAuthenticated);
   const rol = useSelector(selectRol);
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    dispatch(performLogout());
+  };
   const handleLogin = () => {
     navigate("/cart");
   };
@@ -38,7 +41,7 @@ function Header() {
             <span className={style.cartCount}>{totalItems}</span>
           )}
         </div>
-        {rol == "ROLE_ADMIN" ? (
+        { isAuth && rol == "ROLE_ADMIN" ? (
           <div className={style.Link}>
             <Link to="/dashboard">
               <button className="bntSecondary">Panel de control</button>

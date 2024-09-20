@@ -56,7 +56,7 @@ function Home() {
           <p>No se ha recibido información</p>
         ) : (
           <section className={styles.productlist}>
-            {products.map((product) => (
+            {products.slice(0,10).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </section>

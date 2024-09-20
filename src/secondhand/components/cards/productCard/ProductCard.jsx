@@ -36,7 +36,6 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
       </div>
-      {/* Icono favorito */}
       <i className={`fas fa-heart ${styles.favoriteIcon}`} onClick={handleFavorito}></i>
     </div>
   ) : (

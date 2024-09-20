@@ -2,7 +2,6 @@ import { useState } from "react";
 import style from "./Busqueda.module.css";
 
 const Busqueda = ({ onSearch }) => {
-  // Estados para almacenar el valor del input y el criterio de búsqueda
   const [searchText, setSearchText] = useState("");
   const [searchBy, setSearchBy] = useState("category");
 

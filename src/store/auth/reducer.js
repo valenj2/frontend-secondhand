@@ -1,4 +1,3 @@
-// reducer.js
 import { createReducer } from '@reduxjs/toolkit';
 import { setLoading, setMessage, setToken, setAuthenticated, setUser, logout } from './actions';
 
@@ -7,7 +6,7 @@ const initialState = {
   message: '',
   token: null,
   isAuthenticated: false,
-  user: {} // Puedes inicializar con un objeto vacío
+  user: {} 
 };
 
 const authReducer = createReducer(initialState, (builder) => {

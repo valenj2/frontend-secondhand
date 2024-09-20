@@ -1,4 +1,3 @@
-// selectors.js
 export const selectAuth = (state) => state.auth;
 
 export const selectLoading = (state) => state.auth.loading;

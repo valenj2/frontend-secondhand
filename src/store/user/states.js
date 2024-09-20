@@ -1,4 +1,3 @@
-// states.js
 export const initialState = {
     tipoDeUsuario: null,
     usuario: null,
