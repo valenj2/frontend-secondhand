@@ -1,0 +1,38 @@
+.tableContainer {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  .table {
+      width: 80%;
+      border: white  1px solid;
+    color: #fff;
+    border-radius: 0.4em;
+    overflow: hidden;
+    tr {
+      border-color: lighten(#34495e, 10%);
+    }
+    th,
+    td {
+      padding: 10px;
+    }
+   
+  }
+  
+  .actions {
+    text-align: center;
+  }
+  
+  .Icon {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .Icon:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse, ajusta según tus necesidades */
+  }
+  

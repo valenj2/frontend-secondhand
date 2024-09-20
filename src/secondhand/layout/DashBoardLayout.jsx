@@ -1,12 +1,16 @@
 import { LateralNav } from "@components/lateralnav/LateralNav";
-import styles from "./DashBoardLayout.module.css"
-export const DashBoard = ( {children}) => {
+import styles from "./DashBoardLayout.module.css";
+import Header from "../components/header/Header";
+export const DashBoard = ({ children }) => {
   return (
-    <div className={styles.container}>
-      <LateralNav/>
-      <main className={styles.main}>
-        {children}
-      </main>
-    </div>
+    <>
+      <Header />
+      <div className={styles.container}>
+        <LateralNav />
+        <div className={styles.content}>
+          <main className={styles.main}>{children}</main>
+        </div>
+      </div>
+    </>
   );
-}
+};

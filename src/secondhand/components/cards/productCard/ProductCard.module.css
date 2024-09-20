@@ -1,33 +1,43 @@
 .card {
-  width: 250px; /* Define un ancho fijo */
-  height: 350px; /* Define una altura fija */
+  width: 100%; /* Cambia el ancho para que se adapte al contenedor padre */
+  max-width: 250px; /* Establece un ancho máximo si es necesario */
+  height: auto; /* Ajusta la altura automáticamente */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  border-radius: 5px; /* Bordes redondeados */
+  border-radius: 5px; 
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Oculta el contenido que se desborda */
-}
-
-.card img {
-  width: 100%;
-  height: 60%; /* Ajusta la altura de la imagen */
-  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionar */
+  overflow: auto; 
+  position: relative;
 }
 
 .card .container {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 40%; /* Ajusta el espacio disponible para el contenido */
-  overflow: auto; /* Permite el desplazamiento si el contenido es demasiado grande */
+  flex: 1; /* Hace que el contenedor ocupe el espacio restante */
+}
+
+
+.card img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.card .container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 40%; 
+  overflow: auto;
 }
 
 .card h4, .card p {
   margin: 5px 0;
-  overflow: hidden; /* Oculta el desbordamiento del texto */
-  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
-  white-space: nowrap; /* Evita el salto de línea en el texto */
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: normal; /* Permite que el texto se ajuste en lugar de truncarse */
 }
 
 .btnContainer {
@@ -48,4 +58,20 @@
 
 .btn:hover {
   background-color: #A0F2D4;
+}
+.favoriteIcon {
+  position: absolute;
+  font-size: 30px;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  margin: 10px;
+  opacity: 0.5; /* Semitransparente */
+  transition: color 0.3s, opacity 0.3s; /* Transición suave para el color y la opacidad */
+  cursor: pointer;
+}
+
+.favoriteIcon:hover {
+  opacity: 1; /* Sin transparencia al pasar el mouse */
+  color: red; /* Color cuando pasa el mouse, ajusta según sea necesario */
 }

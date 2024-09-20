@@ -61,7 +61,8 @@ function Home() {
             ))}
           </section>
         )}
-       <Carrusel prendas={prendas} />
+        {prendas.length !=0 &&  <Carrusel prendas={prendas} /> }
+      
       </div>
     </Layout>
   );

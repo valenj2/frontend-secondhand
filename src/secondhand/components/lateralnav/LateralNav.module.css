@@ -1,13 +1,5 @@
 
-/* VARIABLES */
 
-:root {
-    --blanco: #E0E0E0;
-    --azul-opacidad: #184463;
-    --bg-body: #C7E1FF;
-}
-
-/* GENERALES */
 
 * {
     margin: 0;
@@ -16,51 +8,35 @@
 }
 
 
-
-/* LAYOUT */
-
 .menuDashboard {
     max-width: 100px;
     height: 100vh;
-    background: var(--bg-menu);
     padding: 20px;
     transition: max-width .3s ease;
 }
 
-.topMenu {
+.topMenuRigth{
     display: flex;
-    align-items: center;
+    justify-content: right;
+}
+.topMenuCenter{
+    display: flex;
     justify-content: center;
 }
-
-.topMenu .logo {
-    display: flex;
-    align-items: center;
-}
-
-.topMenu .logo img {
-    width: 100px;
-    transition: width .3s ease;
-}
-
-.topMenu .logo span {
-    font-size: 20px;
-    margin-left: 20px;
-    display: none;
-}
-
 .topMenu .toggle {
     width: 30px;
     height: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
     cursor: pointer;
     margin-bottom: 30px;
 }
 
 .topMenu .toggle i {
     font-size: 35px;
+    display: flex;
+    justify-content: right;
 }
 
 /* INPUT BOX */
@@ -92,7 +68,10 @@
 }
 
 /* ENLACES MENU */
-
+.enlace:hover{
+    opacity: 1.5;
+    border: white solid;
+}
 .menu .enlace {
     width: 100%;
     padding: 20px 0 20px 17px;
@@ -105,9 +84,6 @@
     transition: all .3s ease;
 }
 
-.menu .enlace:hover {
-    background: var(--azul-opacidad);
-}
 
 .menu .enlace i {
     margin-right: 20px;
@@ -123,9 +99,6 @@
     max-width: 300px;
 }
 
-.open .topMenu .logo span {
-    display: block;
-}
 
 .open .inputSearch {
     width: auto;
@@ -142,3 +115,8 @@
 .open .menu .enlace span {
     opacity: 1;
 }
+
+.containOption {
+    display: flex; 
+    align-items: center;
+  }

@@ -22,9 +22,6 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para el login
-    console.log("Login email:", loginEmail);
-    console.log("Login password:", loginPassword);
     dispatch(login(loginEmail,loginPassword))
   };
 
@@ -48,7 +45,7 @@ const Login = () => {
             className={style.checkbox}
           />
           
-          <div className={style.signup}>
+          <div className={style.login}>
             <form className={style.containform} onSubmit={handleSignUp}>
               <label
                 htmlFor="chk"
@@ -99,7 +96,7 @@ const Login = () => {
             </form>
           </div>
 
-          <div className={style.login}>
+          <div className={style.signup}>
             <form className={style.containform} onSubmit={handleLogin}>
               <label
                 htmlFor="chk"

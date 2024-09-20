@@ -7,7 +7,6 @@ export const { setProducts, setProductsByCategory,setLoading,setActivateFailure}
 export const obtenerPrendas = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    // const response = await get(`Acceso/ActivarCuenta?token=${}`);
     const response = await get(`/prendas`);
     if (response.data) {
       dispatch(setProducts(response.data));

@@ -34,4 +34,6 @@
   .navButton:last-of-type {
     right: 10px;
   }
-  
+  .title{
+    margin: 30px 0px;
+  }

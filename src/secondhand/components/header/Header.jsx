@@ -16,6 +16,9 @@ function Header() {
   const handleLogin = () => {
     navigate("/cart");
   };
+  const handleFavorito = () => {
+    console.log("to favorite");
+  };
   return (
     <header className={`background-color-primary ${style.header}`}>
       <div className={style.headerleft}>
@@ -25,8 +28,12 @@ function Header() {
         <h1 className={style.slogan}>Tu Tienda Favorita</h1>
       </div>
       <div className={style.headerright}>
+        <i
+          className={`fas fa-heart ${style.Icon}`}
+          onClick={handleFavorito}
+        ></i>
         <div className={style.Link} onClick={handleLogin}>
-          <i className={`fas fa-shopping-cart ${style.cartIcon}`}></i>
+          <i className={`fas fa-shopping-cart ${style.Icon}`}></i>
           {totalItems > 0 && (
             <span className={style.cartCount}>{totalItems}</span>
           )}
@@ -51,7 +58,6 @@ function Header() {
             </Link>
           </div>
         )}
-        
       </div>
     </header>
   );
