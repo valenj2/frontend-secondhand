@@ -1,5 +1,4 @@
-import Header from "../components/header/Header";
-import { LateralNav } from "../components/lateralnav/LateralNav";
+import { LateralNav } from "@components/lateralnav/LateralNav";
 import styles from "./DashBoardLayout.module.css"
 export const DashBoard = ( {children}) => {
   return (

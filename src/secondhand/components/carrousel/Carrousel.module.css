@@ -1,0 +1,37 @@
+.carruselContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .sliderContainer {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .sliderItem{
+    flex-grow: 0;
+    flex: 0 0 auto; /* Permite que cada tarjeta tenga su propio ancho */
+    scroll-snap-align: center; /* Alinea la tarjeta al centro */
+    max-width: 300px; /* Ajusta el ancho máximo de las tarjetas */
+  }
+
+  .navButton {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .navButton:first-of-type {
+    left: 10px;
+  }
+  
+  .navButton:last-of-type {
+    right: 10px;
+  }
+  
